@@ -11,5 +11,17 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addUtilities }) {
+      const newUtilities = {
+        '@media (prefers-reduced-motion)': {
+          'nav *': {
+            'transition-duration': '0s !important',
+            'animation-duration': '0s !important',
+          },
+        },
+      }
+      addUtilities(newUtilities)
+    }
+  ],
 } 
